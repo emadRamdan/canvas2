@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+body{
+    background-color: rgb(30, 121, 112);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh ;
+    
+}
+.container{
+    display: flex;
+    width: 100%;
+    max-width: 1050px;
+    gap: 10px;
+    padding: 10px;
+}
+
+secation{
+    background-color: antiquewhite;
+    border-radius: 8px;
+
+}
+.tools-area{
+    padding: 16px 22px 0px ;
+}
+.drow_area{
+    flex: 1;
+}
+
+.container .row{
+    padding-bottom: 20px;
+}
+
+.row .options{
+    list-style: none;
+    padding: 10px 0 0 5px;
+}
+
+.row .options .option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.option :where(span , label){
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: rgb(85, 84, 84);
+}
+
+
+.option #fill-color{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.option:is(:hover ,.active) img{
+    filter: invert(80%) saturate(3000%) sepia(90%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.option:is(:hover ,.active) :where(span , label){
+    color: black;
+    background-color: rgb(30, 121, 112);
+    border-radius: 6px;
+    width: fit-content;
+}
+#fill-color:checked ~ label{
+    color: black;
+    background-color: rgb(30, 121, 112);
+    border-radius: 6px;
+    width: fit-content;
+}
+
+
+.option #slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 20px;
+}
+.colors{
+    display: flex;
+    justify-content: space-between;
+}
+.colors .option{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.colors .option:nth-child(1){
+    background-color: rgb(255, 255, 255);
+    border: 1px solid  rgb(7, 36, 61);
+}
+.colors .option:nth-child(2){
+    background-color: rgb(150, 13, 13);
+    border: 1px solid  rgb(7, 36, 61);
+}
+.colors .option:nth-child(3){
+    background-color: green;
+    border: 1px solid  rgb(7, 36, 61);
+}
+.colors .option:nth-child(4){
+    background-color: black;
+    border: 1px solid  rgb(7, 36, 61);
+}
+.colors .option:nth-child(5){
+    background-color: #dfdf0c;
+    border: 1px solid  rgb(7, 36, 61);
+}
+
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: inherit;
+    border-radius: inherit;
+    border: 2px solid #eee;
+    transform: translate(-50% , -50%);
+}
+
+.colors .option:first-child.selected::before{
+    background-color: rgb(221, 216, 216);
+}
+
+.buttons button{
+    width: 100%;
+    background-color: none ;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 11px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.4 ease-in-out;
+
+}
+
+.colors #picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.buttons .clear{
+    background-color:rgb(194, 190, 190);
+}
+
+.buttons .clear:hover{
+    background-color:rgb(49, 47, 47);
+    color: aliceblue;
+}
+.buttons .save{
+    background-color:rgb(6, 185, 245);
+}
+
+.drow_area canvas{
+    width: 100%;
+    height: 100%;
+}
